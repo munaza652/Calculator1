@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            body{
+                background-color:rgb(182, 225, 225);
+                font-family: Arial;
+                text-align: center;
+            }
+            .calc-box{
+                background-color: white;
+                width: 320px;
+                margin: 30px auto;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0px 4px 15px gray;
+            }
+            input {
+                width: 90%;
+                padding: 12px;
+                margin: 5px;
+                font-size: 20px;
+                border-radius: 8px;
+                border: 1px solid rgb(163, 112, 112);
+            }
+            button{
+                width: 60px;
+                height: 45px;
+                margin: 5px;
+                font-size: 20px;
+                background-color: rgb(71, 147, 119);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+            #result{
+                background: rgb(58, 56, 56);
+                color: white;
+                padding: 10px;
+                border-radius: 8px;
+                margin-top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calc-box">
+        <h1>Calculator</h1>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <br> <br>
+        <input type="number" id="num2" placeholder="Enter second number">
+    <br> <br>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+
+     <h1 id="result">Result: </h1>
+     </div>
+    <script>
+        function calculate(operator)
+        {
+            let number1 = Number(document.querySelector("#num1").value);
+            let number2 = Number(document.querySelector("#num2").value);
+            let result = 0;
+            if(operator=='+')
+        {
+            rst = number1 + number2
+        }
+        else if(operator=='-')
+        {
+            rst = number1-number2
+        }
+        else if(operator=='*')
+        {
+            rst = number1*number2
+        }
+        else
+        {
+            rst = number1/number2
+        }
+        document.querySelector("#result").innerHTML="Result: " +rst;        }
+        </script>  
+    
+    </body>
+</html>
